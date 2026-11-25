@@ -1,0 +1,37 @@
+# KRYOMAI CORE — Advanced AI Research and Intelligence Platform
+# Lightweight, CPU-first project configuration (v0.1.0, pre-implementation).
+
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kryomai"
+version = "0.1.0"
+description = "Advanced AI Research and Intelligence Platform"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0,<10.0",
+    "ruff>=0.11,<1.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["kryomai*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-ra"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]

@@ -1,43 +1,60 @@
-# ANUSANDHAN Development Roadmap
+# KryomAI Core Development Roadmap
 
-Engineering serves research. No code is written ahead of a documented need.
-CPU-first operation is a hard constraint for early stages.
+Engineering serves research. No code is written ahead of a documented
+need. CPU-first operation is a hard constraint for R0–R2.
 
-## Stage 0 — Documentation (current)
+Research stages and their gates live in
+[research-roadmap.md](research-roadmap.md). This document defines the
+engineering work each stage requires.
 
-- Establish vision, principles, architecture, and roadmaps.
-- Define research organization in `research/README.md`.
-- Accept this foundation after review.
-- No source code. No dependencies.
+## R0 — Documentation (current)
 
-## Stage 1 — Reproducibility skeleton
+Entry: project chartered.
+Scope: establish vision, principles, architecture, roadmaps,
+strategies, and research organization.
+Exit: v0.1.0 and v0.2.0 documentation reviewed and accepted.
+No source code beyond the minimal package initializer. No dependencies.
 
-- Add environment specification with locked versions.
-- Add seed, config, and logging conventions.
-- Add dataset-card and experiment-report templates.
-- Add lint and unit-test setup for future utilities.
-- Definition of done: a trivial CPU run is fully reproducible.
+## R1 — Reproducibility skeleton
 
-## Stage 2 — Evaluation tooling
+Entry: R0 exit.
+Scope: environment specification with locked versions; seed, config,
+and logging conventions; dataset-card and experiment-report
+templates; lint and unit-test setup for future utilities.
+Exit: a trivial CPU run is fully reproducible by a second machine.
+Measure: identical outputs from a clean environment rebuild.
 
-- Add metric definitions with fixed versions.
-- Add baseline runners on small public datasets.
-- Add report format separating results from goals.
-- Definition of done: baselines reproduce within stated tolerance.
+## R2 — Evaluation tooling
 
-## Stage 3 — Domain pilots (engineering support)
+Entry: R1 exit.
+Scope: metric definitions with fixed versions; baseline runners on
+small public datasets; report format separating results from goals.
+Exit: baselines reproduce within stated tolerance.
+Measure: three-seed reruns inside tolerance, recorded variance.
 
-- Add only modules required by an approved proposal.
-- One module per responsibility. No speculative folders.
-- CPU time and memory budgets enforced and logged.
-- Definition of done: independent rerun matches the report.
+## R3 — Domain pilots (engineering support)
 
-## Stage 4 — Stable interfaces
+Entry: R2 exit, GPU access approved, framework selected.
+Scope: only modules required by an approved proposal; one module per
+responsibility; compute time and memory budgets enforced and logged.
+Exit: independent rerun matches the report.
+Measure: reproduced metrics within stated tolerance.
 
-- Promote only proven components to versioned APIs.
-- Each API needs docs, tests, versioning, and changelog entries.
-- External integration, including any future KryomCode or KryomAI use,
-  goes through these stable APIs only.
+## R4 — Stable interfaces
+
+Entry: R3 exit for promoted components.
+Scope: versioned APIs and Python-first SDK for proven components
+only; docs, tests, versioning, changelog entries; KryomLabs
+integration contract.
+Exit: interface test suite passes; deprecation policy published.
+Measure: zero breaking changes outside the policy window.
+
+## R5 — Scale-up support
+
+Entry: R4 exit plus dedicated infrastructure and budget approval.
+Scope: defined per program in the approving decision. Distributed
+training support lives here or not at all.
+Exit: defined per program.
 
 ## Testing and quality rules
 
@@ -48,6 +65,8 @@ CPU-first operation is a hard constraint for early stages.
 
 ## Explicit non-goals
 
-- No GPU-required pipelines in Stages 0–2.
+- No GPU-required pipelines in R0–R2.
 - No empty `src/` scaffolds or placeholder packages.
-- No model releases before Stage 3 exit criteria are met.
+- No framework or vendor commitments before evidence (D8).
+- No model releases before R3 exit criteria are met.
+- No serving before R4 exit criteria are met.

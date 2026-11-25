@@ -1,4 +1,4 @@
-# ANUSANDHAN Research Principles
+# KryomAI Core Research Principles
 
 These principles are binding. A proposal that conflicts with them is rejected.
 
@@ -8,6 +8,8 @@ These principles are binding. A proposal that conflicts with them is rejected.
 - Every claim cites code version, dataset version, seed, and evaluation.
 - Negative results and failures are recorded.
 - No AGI/ASI claims. Report per-task, per-benchmark evidence only.
+- No model, capability, or result is claimed before it is demonstrated
+  and independently rerunnable.
 
 ## 2. Reproducibility
 
@@ -26,13 +28,17 @@ These principles are binding. A proposal that conflicts with them is rejected.
 ## 4. Data provenance and licensing
 
 - Every dataset needs source, version, access date, and license.
+- For stages R0–R2, use only public-domain and clearly open-licensed
+  datasets. Record licenses, provenance, sources, and usage
+  restrictions for every dataset.
 - Use only data with a compatible, documented license.
 - Media and biomedical data need explicit provenance review.
 - Remove or replace data whose license cannot be verified.
 
 ## 5. Safety and ethics
 
-- Biotechnology and medical work is non-operational until reviewed.
+- Biotechnology and medical-subdomain work is non-operational until
+  reviewed. See [safety-and-governance.md](safety-and-governance.md).
 - No clinical advice, diagnosis, or treatment claims.
 - Dual-use and biosafety risks are assessed before work begins.
 - Robotics work stays in simulation and offline data at this stage.
@@ -42,12 +48,15 @@ These principles are binding. A proposal that conflicts with them is rejected.
 - Small, verifiable steps before broad programs.
 - No speculative implementation folders or placeholder modules.
 - Each new module needs an approved proposal and an exit criterion.
+- Framework and architecture commitments wait for evidence (D8).
 
-## 7. Independence
+## 7. Ecosystem independence
 
-- ANUSANDHAN stays independent from KryomCode and KryomAI.
-- Shared work, if any, uses stable, versioned APIs only.
-- No hidden coupling through internals or private dependencies.
+- KryomAI Core stays an independent research project: KryomLabs and
+  individual products integrate through stable, versioned APIs only.
+- Shared work, if any, uses those APIs. No hidden coupling through
+  internals or private dependencies.
+- Terms are defined in [glossary.md](glossary.md).
 
 ## 8. Open science
 
