@@ -1,0 +1,190 @@
+# ANUSANDHAN — Python research project
+# Python-first ignores for Windows, macOS and Linux, plus research artifacts.
+#
+# Deliberately NOT ignored (stay tracked by design):
+# - Shareable project configuration: pyproject.toml, setup.py/cfg,
+#   requirements*.txt, environment.yml, tox.ini, Dockerfile,
+#   docker-compose.yml, .editorconfig, .pre-commit-config.yaml,
+#   CI workflows, and pytest/ruff/mypy configuration.
+# - Dataset documentation: dataset cards (*.md), provenance notes,
+#   metadata and licensing files. Only local/generated data content
+#   (large, binary or reproducible artifacts) is ignored below.
+# - Jupyter notebooks (*.ipynb); only their checkpoints are ignored.
+# - `.env.example`; only real environment/secret files are ignored.
+
+# --- Python bytecode and caches ---
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- C extensions ---
+*.so
+
+# --- Distribution and packaging ---
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# --- Virtual environments ---
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+__pypackages__/
+
+# --- Test, coverage and QA caches ---
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# --- Type checkers and linters ---
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.ruff_cache/
+.pyre/
+.pytype/
+
+# --- Jupyter checkpoints (notebooks stay tracked) ---
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# --- Secrets and local environment files ---
+# `.env` also covers a virtualenv unfortunately named `.env`.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+
+# --- Research data: local and generated content only ---
+# `data/` itself is NOT ignored. Documentation, dataset cards, provenance,
+# metadata and licensing files stay tracked. Curated fixtures can be
+# force-added with `git add -f` when truly needed.
+*.parquet
+*.h5
+*.hdf5
+*.hdf
+*.pkl
+*.pickle
+*.npy
+*.npz
+*.csv
+*.tsv
+*.db
+*.sqlite
+*.sqlite3
+*.db-shm
+*.db-wal
+*.duckdb
+*.feather
+*.arrow
+*.zarr/
+*.lmdb/
+
+# --- Research models and checkpoints ---
+*.ckpt
+*.pt
+*.pth
+*.onnx
+*.safetensors
+*.pb
+*.tflite
+*.mlmodel
+*.gguf
+checkpoints/
+pretrained/
+
+# --- Experiment tracking, outputs and logs ---
+mlruns/
+mlartifacts/
+wandb/
+runs/
+lightning_logs/
+outputs/
+results/
+artifacts/
+logs/
+*.log
+
+# --- Documentation build output ---
+docs/_build/
+site/
+
+# --- Temporary and backup files ---
+*.tmp
+*.temp
+*.bak
+*.orig
+*.swp
+*.swo
+*~
+
+# --- OS: Windows ---
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# --- OS: macOS ---
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# --- OS: Linux ---
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# --- Editors and IDEs ---
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.sublime-project
+*.sublime-workspace
+.project
+.pydevproject
+
+# --- Explicitly preserved: documentation and licensing ---
+# Safety net: these are never ignored above and must always stay tracked.
+!*.md
+!LICENSE*
+!LICENCE*
